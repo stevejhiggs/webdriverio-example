@@ -1,0 +1,31 @@
+{
+  "name": "webdriverio-example",
+  "version": "1.0.0",
+  "description": "shows how to get a test environment with selenium and webdriver io up and running",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp acceptanceTest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevejhiggs/webdriverio-example.git"
+  },
+  "author": "steve higgs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stevejhiggs/webdriverio-example/issues"
+  },
+  "homepage": "https://github.com/stevejhiggs/webdriverio-example#readme",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "chai-as-promised": "^5.1.0",
+    "gulp": "^3.9.0",
+    "gulp-mocha": "^2.2.0",
+    "gulp-nodemon": "^2.0.4",
+    "gulp-webdriver": "^1.0.1",
+    "mocha": "^2.3.4",
+    "run-sequence": "^1.1.4",
+    "selenium-standalone": "^4.9.0",
+    "webdriverio": "^4.0.3"
+  }
+}
