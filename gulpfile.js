@@ -34,3 +34,5 @@ gulp.task('acceptanceTest', ['selenium'], () => {
       selenium.child.kill();
     });
 });
+
+gulp.task('default', ['acceptanceTest']);

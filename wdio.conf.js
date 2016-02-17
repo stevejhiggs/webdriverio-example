@@ -57,27 +57,29 @@ var config = {
     }
 };
 
-config.user = 'your sauce name';
-config.key = 'your sauce key';
-config.host = 'ondemand.saucelabs.com';
-config.port = 80;
-config.capabilities = [
-  {
-    browserName: 'android',
-    platform: 'Linux',
-    version: '4.4',
-    deviceName: 'Samsung Galaxy S3 Emulator',
-    deviceOrientation: 'portrait',
-    public: true,
-    name: 's3 test'
-  },
-  {
-    browserName: 'safari',
-    platform: 'OS X 10.11',
-    version: '9.0',
-    public: true,
-    name: 'mac test'
-  }
-];
+if (process.env.RUNONSAUCE) {
+  config.user = 'your sauce name';
+  config.key = 'your sauce key';
+  config.host = 'ondemand.saucelabs.com';
+  config.port = 80;
+  config.capabilities = [
+    {
+      browserName: 'android',
+      platform: 'Linux',
+      version: '4.4',
+      deviceName: 'Samsung Galaxy S3 Emulator',
+      deviceOrientation: 'portrait',
+      public: true,
+      name: 's3 test'
+    },
+    {
+      browserName: 'safari',
+      platform: 'OS X 10.11',
+      version: '9.0',
+      public: true,
+      name: 'mac test'
+    }
+  ];
+}
 
 exports.config = config;
