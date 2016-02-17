@@ -1,5 +1,4 @@
-exports.config = {
-
+var config = {
     //
     // ==================
     // Specify Test Files
@@ -45,18 +44,6 @@ exports.config = {
     mochaOpts: {
         ui: 'bdd'
     },
-
-    //
-    // =====
-    // Hooks
-    // =====
-    // Run functions before or after the test. If one of them returns with a promise, WebdriverIO
-    // will wait until that promise got resolved to continue.
-    //
-    // Gets executed before all workers get launched.
-    onPrepare: function() {
-        // do something
-    },
     //
     // Gets executed before test execution begins. At this point you will have access to all global
     // variables like `browser`. It is the perfect place to define custom commands.
@@ -67,17 +54,30 @@ exports.config = {
       chai.use(chaiAsPromised);
       expect = chai.expect;
       chai.Should();
-    },
-    //
-    // Gets executed after all tests are done. You still have access to all global variables from
-    // the test.
-    after: function(failures, pid) {
-        // do something
-    },
-    //
-    // Gets executed after all workers got shut down and the process is about to exit. It is not
-    // possible to defer the end of the process using a promise.
-    onComplete: function() {
-        // do something
     }
 };
+
+config.user = 'your sauce name';
+config.key = 'your sauce key';
+config.host = 'ondemand.saucelabs.com';
+config.port = 80;
+config.capabilities = [
+  {
+    browserName: 'android',
+    platform: 'Linux',
+    version: '4.4',
+    deviceName: 'Samsung Galaxy S3 Emulator',
+    deviceOrientation: 'portrait',
+    public: true,
+    name: 's3 test'
+  },
+  {
+    browserName: 'safari',
+    platform: 'OS X 10.11',
+    version: '9.0',
+    public: true,
+    name: 'mac test'
+  }
+];
+
+exports.config = config;
